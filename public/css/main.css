@@ -2164,7 +2164,7 @@ section,
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--bs-heading-color), transparent 40%);
 }
 
 .contact .php-email-form {

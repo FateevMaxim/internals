@@ -123,7 +123,7 @@
                         <i class="bi bi-phone flex-shrink-0"></i>
                         <div>
                             <h4>Телефон:</h4>
-                            <p><a href="tel:+77777777777">+7 777 777 7777</a></p>
+                            <p><a href="tel:+77004709091">+7 700 470 9091</a></p>
                         </div>
                     </div><!-- End Info Item -->
 

@@ -77,7 +77,7 @@
 <main class="main">
 
     @yield('main')
-    <a href="https://api.whatsapp.com/send?phone=79000000000" target="_blank" title="Написать в Whatsapp" rel="noopener noreferrer"><div class="whatsapp-button"><i class="bi bi-whatsapp"></i></div></a>
+    <a href="https://api.whatsapp.com/send?phone=77004709091" target="_blank" title="Написать в Whatsapp" rel="noopener noreferrer"><div class="whatsapp-button"><i class="bi bi-whatsapp"></i></div></a>
 </main>
 
 <footer id="footer" class="footer dark-background">
@@ -92,8 +92,7 @@
             </div>
 
             <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-                <a href=""><i class="bi bi-telegram"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=77004709091"><i class="bi bi-whatsapp"></i></a>
             </div>
 
         </div>
