@@ -65,7 +65,7 @@ body {
   background-color: var(--bs-body-bg);
   font-family: var(--default-font);
     min-height: 100vh;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 
 a {
