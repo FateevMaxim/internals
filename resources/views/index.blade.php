@@ -92,7 +92,7 @@
             </div>
 
             <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-                <a href="https://api.whatsapp.com/send?phone=77004709091"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=77004709091" target="_blank"><i class="bi bi-whatsapp"></i></a>
             </div>
 
         </div>
