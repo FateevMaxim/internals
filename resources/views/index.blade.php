@@ -13,7 +13,6 @@
     <meta property="og:image" content="https://internals.kz/img/logo.png" />
     <meta property="og:url" content="https://internals.kz/" />
     <meta property="og:type" content="website" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trustedscripts.com;" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
