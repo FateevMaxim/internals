@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Internals</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="Компания Internals Central Asia — официальный дистрибьютор ZEHUA в странах СНГ. Мы поставляем технологическое оборудование и внутренние устройства для нефтехимических и химических производств, предоставляем лицензирование технологических процессов, инженерное сопровождение и логистику." name="description">
+    <meta content="Internals Central Asia, ZEHUA, технологическое оборудование, внутренние устройства, нефтехимия, химическая промышленность, дистилляционные процессы, лицензирование, инженерное сопровождение, SHELL, EXXON MOBIL, оборудование для нефтехимии, насадки, тарелки, опорные решетки, логистика, шеф-монтаж, ОДСИ, СНГ" name="keywords">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
