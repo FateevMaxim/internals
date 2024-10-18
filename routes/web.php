@@ -21,4 +21,6 @@ Route::group(['prefix' => 'zehua'], function () {
     Route::get('products/{slug}', [ZehuaController::class, 'products'])->name('zehua.products');
     Route::get('product/{slug}', [ZehuaController::class, 'product'])->name('zehua.product');
 });
-
+Route::get('/symlink', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+});
