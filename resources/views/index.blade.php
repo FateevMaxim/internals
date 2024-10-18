@@ -4,10 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Internals</title>
+    <title>Internals Central Asia – Технологическое оборудование для нефтехимической промышленности</title>
     <meta content="Компания Internals Central Asia — официальный дистрибьютор ZEHUA в странах СНГ. Мы поставляем технологическое оборудование и внутренние устройства для нефтехимических и химических производств, предоставляем лицензирование технологических процессов, инженерное сопровождение и логистику." name="description">
     <meta content="Internals Central Asia, ZEHUA, технологическое оборудование, внутренние устройства, нефтехимия, химическая промышленность, дистилляционные процессы, лицензирование, инженерное сопровождение, SHELL, EXXON MOBIL, оборудование для нефтехимии, насадки, тарелки, опорные решетки, логистика, шеф-монтаж, ОДСИ, СНГ" name="keywords">
-
+    <link rel="canonical" href="https://internals.kz/" />
+    <meta property="og:title" content="Internals Central Asia – Технологическое оборудование" />
+    <meta property="og:description" content="Официальный дистрибьютор ZEHUA для нефтехимических и химических производств." />
+    <meta property="og:image" content="https://internals.kz/img/logo.png" />
+    <meta property="og:url" content="https://internals.kz/" />
+    <meta property="og:type" content="website" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trustedscripts.com;" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
