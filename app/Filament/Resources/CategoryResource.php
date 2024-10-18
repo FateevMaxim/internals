@@ -6,6 +6,7 @@ use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -23,7 +24,8 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label('Категория')->required(),
+                TextInput::make('name')->label('Категория')->required(),
+                TextInput::make('slug')->disabled(),
                 Forms\Components\FileUpload::make('image')->directory('categories')->label('Изображение'),
                 Forms\Components\Select::make('parent_id')->relationship('parent', 'name')->label('Категория'),
             ]);

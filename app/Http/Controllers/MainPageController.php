@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
 use App\Models\MainPage;
 use App\Models\Partner;
 use Illuminate\Http\Request;
@@ -19,6 +20,17 @@ class MainPageController extends Controller
 
         $partners = Partner::query()->select('title', 'image', 'link')->get();
 
-        return view('index', compact('aboutUs', 'contactUs', 'aboutUsImage', 'aboutUsTitle', 'partners'));
+        $certificatesRaw = Certificate::query()->select('name', 'image')->get();
+        $certificates = [];
+        $id = 1;
+        foreach ($certificatesRaw as $certificate) {
+            foreach ($certificate['image'] as $image) {
+                $certificates[$id]['image'] = $image;
+                $certificates[$id]['name'] = $certificate['name'];
+                $id++;
+            }
+        }
+        return view('main', compact('aboutUs', 'contactUs',
+                                        'aboutUsImage', 'aboutUsTitle', 'partners', 'certificates'));
     }
 }

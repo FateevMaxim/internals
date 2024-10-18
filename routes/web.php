@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\ZehuaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainPageController::class, 'index'])->name('home');
+Route::group(['prefix' => 'zehua'], function () {
+    Route::get('categories', [ZehuaController::class, 'categories'])->name('zehua.categories');
+    Route::get('products/{slug}', [ZehuaController::class, 'products'])->name('zehua.products');
+    Route::get('product/{slug}', [ZehuaController::class, 'product'])->name('zehua.product');
+});
+

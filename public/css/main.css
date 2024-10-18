@@ -18,7 +18,7 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #1a1f24; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #485664; /* Color for headings, subheadings and title throughout the website */
@@ -29,7 +29,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #485664;  /* The default color of the main navmenu links */
+  /*--nav-color: #485664;  /* The default color of the main navmenu links */
   --nav-hover-color: #0ea2bd; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -61,8 +61,8 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
   font-family: var(--default-font);
 }
 
@@ -83,7 +83,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--bs-heading-color);
   font-family: var(--heading-font);
 }
 
@@ -217,13 +217,73 @@ h6 {
     transform: rotate(360deg);
   }
 }
+.logo {
+     width: 100%;
+     height: 50px;
+     background-image: var(--logo);
+     background-size: contain;
+     background-repeat: no-repeat;
+}
+.toggle {
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+}
 
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 23px !important;
+    height: 23px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+}
+
+.toggle.active {
+    background-color: #333;
+}
+.toggle.active::before {
+    background-color: #ffffff;
+}
+.gt_container--hich1m .gt_switcher .gt_selected a {
+     border: none !important;
+    color: var(--nav-color) !important;
+}
+.gt_container--hich1m .gt_switcher .gt_option {
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    background-color: #eeeeee00 !important;
+}
+
+.gt_container--hich1m .gt_switcher .gt_selected {
+    background: #ffffff00 !important;
+}
+
+.gt_container--hich1m .gt_switcher .gt_option a {
+    color: var(--nav-color) !important;
+}
+.gt_container--hich1m .gt_switcher .gt_option a:hover {
+    background: var(--gt_option_hover) !important;
+}
+.gt_container--hich1m .gt_switcher .gt_selected a:hover {
+    background: none !important;
+}
+.toggle.active::before {
+    transform: translateX(25px); /* Сдвигаем индикатор вправо при включении */
+}
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -286,7 +346,7 @@ h6 {
 }
 
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--scrolled-header);
 }
 
 /*--------------------------------------------------------------
@@ -808,8 +868,8 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
   padding: 10px 0;
   scroll-margin-top: 100px;
   overflow: clip;
@@ -1090,7 +1150,7 @@ section,
   font-size: 18px;
   margin: 0;
   font-weight: 700;
-  color: var(--default-color);
+  color: var(--bs-body-color);
 }
 
 .about .tab-content i {
@@ -3007,4 +3067,174 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+.thumbs {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    max-width:100%;
+    > a {
+        max-width:200px;
+        margin:10px;
+        overflow:hidden;
+        border-radius:5px;
+        box-shadow:0 0 0 3px white, 0 5px 8px 3px rgba(black, 0.6);
+        img {
+            transform:scale(1);
+            transition:transform 0.1s ease-in-out;
+            filter:grayscale(50%);
+            min-width:100%;
+            min-height:100%;
+            max-width:100%;
+            max-height:100%;
+        }
+        &:hover {
+            img {
+                transform:scale(1.1);
+                filter:grayscale(0%);
+            }
+        }
+    }
+}
+
+.lightbox {
+    position:fixed;
+    background:rgba(black,0.5);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    height:100%;
+    width:100%;
+    left:0;
+    top:93px;
+    z-index: 3;
+    transform:translateY(-100%);
+    opacity:0;
+    transition:opacity 0.5s ease-in-out;
+    &:has(div:target) {
+        transform:translateY(0%);
+        opacity:1;
+    }
+    a.nav {
+        width: 30px;
+        height: 40px;
+        text-decoration:none;
+        color:grey;
+        font-size:40px;
+        text-shadow:0 2px 2px rgba(0,0,0,0.8);
+        opacity:0.5;
+        font-weight:200;
+        &:hover {
+            opacity:1;
+        }
+    }
+    .target {
+        position:absolute;
+        height:100%;
+        width:100%;
+        display:flex;
+        transform:scale(0);
+        align-items:center;
+        justify-content:space-between;
+        *:first-child,*:last-child {
+            flex:0 0 100px;
+            text-align:center;
+            @media all and (max-width:600px){
+                flex:0 0 50px;
+            }
+        }
+        .content {
+            transform:scale(0.9);
+            opacity:0;
+            flex:1 1 auto;
+            align-self: center;
+            max-height:100%;
+            min-height:0;
+        // max-width:calc(100% - 200px);
+            min-width:0;
+            border-radius:5px;
+            overflow:hidden;
+            box-shadow:0 0 0 3px white, 0 5px 8px 3px rgba(black, 0.6);
+            transition:transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+            img {
+                min-height:100%;
+                max-width:100%;
+                max-height:calc(100vh - 40px);
+                display:block;
+                margin:0 auto;
+            }
+        }
+        &:target {
+            transform:scale(1);
+            .content {
+                transform:scale(1);
+                opacity:1;
+            }
+        }
+    }
+    .close {
+        position:absolute;
+        right:10px;
+        top:10px;
+    }
+}
+
+.whatsapp-button {
+    position: fixed;
+    right: 13px;
+    bottom: 90px;
+    transform: translate(-50%, -50%);
+    background: #25D366; /*цвет кнопки*/
+    border-radius: 50%;
+    width: 55px; /*ширина кнопки*/
+    height: 55px; /*высота кнопки*/
+    color: #fff;
+    text-align: center;
+    line-height: 53px; /*центровка иконки в кнопке*/
+    font-size: 35px; /*размер иконки*/
+    z-index: 9999;
+}
+.whatsapp-button a {
+    color: #fff;
+}
+.whatsapp-button:before,
+.whatsapp-button:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 50%;
+    border: 1px solid #25D366; /*цвет анимированных волн от кнопки*/
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+}
+
+.whatsapp-button:after{
+    animation-delay: .5s;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.gt_container--hich1m .gt_switcher .gt_option {
+    position: absolute!important;
 }

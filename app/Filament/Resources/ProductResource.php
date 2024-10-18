@@ -7,6 +7,7 @@ use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -26,12 +27,13 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label('Название')->required(),
+                TextInput::make('name')->label('Название')->required(),
+                TextInput::make('slug')->disabled(),
                 \Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor::make('description')
                     ->label('Описание')
                     ->columnSpan('full')
                     ->required(),
-                Forms\Components\FileUpload::make('image')->directory('products')->label('Изображение'),
+                Forms\Components\FileUpload::make('image')->multiple()->directory('products')->label('Изображение'),
                 Forms\Components\Select::make('category_id')->relationship('category', 'name')->label('Категория'),
 
             ]);

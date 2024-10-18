@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -7,10 +7,6 @@
     <title>Internals</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -26,6 +22,23 @@
     <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicons/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicons/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicons/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/favicons/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/favicons/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/favicons/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/favicons/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicons/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicons/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/favicons/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favicons/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('img/favicons/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('img/favicons/ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
     <!-- Main CSS File -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
@@ -35,121 +48,36 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.html#hero" class="logo d-flex align-items-center me-auto me-xl-0">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="assets/img/logo.png" alt="Internals">
+        <a href="/#about" class="logo d-flex align-items-center me-auto me-xl-0">
+
         </a>
+
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#about">О компании</a></li>
-                <li><a href="zehua.html">Zehua<br></a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="{{ route('home') }}">О компании</a></li>
+                <li><a href="{{ route('zehua.categories') }}">Zehua<br></a></li>
+                <li><a href="/#contact">Контакты</a></li>
+                <li>
+                    <div class="gtranslate_wrapper"></div>
+                    <script>window.gtranslateSettings = {"default_language":"ru","languages":["ru","fr","de","it","es","en"],"wrapper_selector":".gtranslate_wrapper","flag_size":24,"switcher_horizontal_position":"inline"}</script>
+                    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
+                </li>
+                <li>
+                    <div class="toggle"></div>
+                </li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
 
     </div>
 </header>
 
 <main class="main">
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            {!! $aboutUsTitle->data !!}
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up">
-
-            <div class="row g-4 g-lg-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-5">
-                    <div class="about-img">
-                        {!! $aboutUsImage->data !!}
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    {!! $aboutUs->data !!}
-                </div>
-
-            </div>
-
-        </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
-        <div class="container" data-aos="fade-up">
-            <div class="row gy-4">
-                @foreach($partners as $partner)
-                    <div class="col-xl-2 col-md-3 col-6 client-logo">
-                        <a href="{{ $partner->link }}" target="_blank">
-                            <img src="{{ asset('storage/'.$partner->image) }}" class="img-fluid" alt="{{ $partner->title
-                            }}"></a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section><!-- /Clients Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Связаться с нами</h2>
-        </div><!-- End Section Title -->
-
-        <div class="mb-5">
-            {!! $contactUs->data !!}
-        </div><!-- End Google Maps -->
-
-        <div class="container" data-aos="fade">
-
-            <div class="row gy-5 gx-lg-5">
-
-                <div class="col-lg-4">
-                    <div class="info-item d-flex">
-                        <i class="bi bi-geo-alt flex-shrink-0"></i>
-                        <div>
-                            <h4>Адрес:</h4>
-                            <p>Казахстан, г.Алматы, ул.Абая, д.68А</p>
-                        </div>
-                    </div><!-- End Info Item -->
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="info-item d-flex">
-                        <i class="bi bi-envelope flex-shrink-0"></i>
-                        <div>
-                            <h4>Email:</h4>
-                            <p><a href="mailto:">manager@internals.kz</a></p>
-                        </div>
-                    </div><!-- End Info Item -->
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="info-item d-flex">
-                        <i class="bi bi-phone flex-shrink-0"></i>
-                        <div>
-                            <h4>Телефон:</h4>
-                            <p><a href="tel:+77777777777">+7 777 777 7777</a></p>
-                        </div>
-                    </div><!-- End Info Item -->
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section><!-- /Contact Section -->
-
+    @yield('main')
+    <a href="https://api.whatsapp.com/send?phone=79000000000" target="_blank" title="Написать в Whatsapp" rel="noopener noreferrer"><div class="whatsapp-button"><i class="bi bi-whatsapp"></i></div></a>
 </main>
 
 <footer id="footer" class="footer dark-background">
@@ -190,6 +118,40 @@
 
 <!-- Main JS File -->
 <script src="{{ asset('js/main.js') }}"></script>
+<script>
+    // Проверяем сохранённую тему и применяем её при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme');
+        const toggle = document.querySelector('.toggle');
+
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+
+            // Добавляем класс active, если тема темная
+            if (savedTheme === 'dark') {
+                toggle.classList.add('active');
+            }
+        }
+    });
+
+    // Добавляем обработчик клика по toggle
+    document.querySelector('.toggle').addEventListener('click', function () {
+        const htmlElement = document.documentElement;
+        const toggle = this;
+        const currentTheme = htmlElement.getAttribute('data-bs-theme');
+
+        // Переключаем тему между светлой и темной
+        if (currentTheme === 'light') {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            localStorage.setItem('theme', 'dark');  // Сохраняем выбор темы
+            toggle.classList.add('active');         // Добавляем класс active для toggle
+        } else {
+            htmlElement.setAttribute('data-bs-theme', 'light');
+            localStorage.setItem('theme', 'light'); // Сохраняем выбор темы
+            toggle.classList.remove('active');      // Убираем класс active для toggle
+        }
+    });
+</script>
 </body>
 
 </html>
